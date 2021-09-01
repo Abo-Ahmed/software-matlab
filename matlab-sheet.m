@@ -65,6 +65,16 @@ sqrtm(A) % the matrix whose square is A
 x.', A.' % the transposes of x and A
 x', A'   % the complex-conjugate of the transposes of x and A
 
+% To get summation of two dimension matrices  
+sum (sum (c))
+sum (c (:)) % or use this as sum of two-dimension matrix gives us the sum of the columns 
+Mean2 (c) % gives us the average of two-dimension matrix 
+Stdw (c)  % gives us the standard deviation of two dimension matrix  
+
+% To concatenate two matrices 
+X = [ c b] % where c and b are two matrices of the same size ( row-based operation)
+x = [ c b ] % column-based operation
+
 rand() % return random number
 randn() % return positive or negative number
 rand(n) % return n X n random
