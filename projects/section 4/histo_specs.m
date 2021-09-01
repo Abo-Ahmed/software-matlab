@@ -1,0 +1,6 @@
+
+
+%histogram specification = histogram matching
+
+
+
