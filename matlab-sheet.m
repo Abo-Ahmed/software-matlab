@@ -15,7 +15,7 @@ pi % mathimatical constant with value 3.14
 z(5) % returns the character 5 in string z 
 
 % matrix operations
-x  =[ 1  5 2 ] % to define matrix 
+x = [ 1  5 2 ] % to define matrix 
 x = 1:9 % from 1 to 9 
 x = [1:9:2] % from 1 to 9 with step 2
 x = [1:9 , 1:3 ] % two periods in our matrix
