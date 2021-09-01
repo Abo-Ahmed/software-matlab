@@ -115,3 +115,78 @@ legend('Cluster 1','Cluster 2','Centroids',...
 
 % in images 
 x (:,:,1 ) % the first plane or RGB planes of the image
+a = imread('cameraman.tif'); % reading image
+
+% image filter example  
+f= imread('test.png');
+w = fspecial('laplacian');
+g = imfilter(f,w);
+% we subtract original image from edged image to get sharpened one
+z = f - g; 
+imshow(f);
+figure
+imshow(z);
+
+
+% function example in *.m file
+function H = hpfilt(type,M,N,D0,n)
+Hlp = lpfilter(type,M,N,D0,n);
+H = 1 - Hlp;
+end
+
+
+% switch case and for loop example
+
+    switch type
+     
+    case 'ideal'
+        for i = 1 : M
+        for j = 1 :N
+           D = sqrt((i-L1).^2 + (j-L2).^2);
+           H(i,j) =double(D<=D0);
+        end
+        end
+        
+   
+     case 'btw'
+        for i = 1 : M
+        for j = 1 :N
+           D = sqrt((i-L1).^2 + (j-L2).^2);
+           H(i,j) = 1/(1 + (D/D0).^(2*n));
+        end
+        end
+        
+     case 'gauss'
+        for i = 1 : M
+        for j = 1 :N
+           D= sqrt((i-L1).^2 + (j-L2).^2);
+            H(i,j) = exp(-(D^2)/(2*(D0^2)));
+        end
+        end
+    otherwise
+     error('Unknown filter type')
+
+
+% class example
+classdef trialClass
+    %TRIALCLASS Summary of this class goes here
+    %   Detailed explanation goes here
+    
+    properties
+        i 
+        j
+    end
+    
+    methods(Static )
+        function [ i j ] = addFunc( x , y )
+        %ADDFUNC Summary of this function goes here
+        %   Detailed explanation goes here
+
+        i = x * y;  
+        j = x / y;
+
+        end
+
+    end
+    
+end
