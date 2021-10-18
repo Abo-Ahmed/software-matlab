@@ -91,10 +91,8 @@ eye(12,4) % a 12 matrix whose first 4 rows are the 4 x 4 identity
 [ f , u ]  = add ( 5, 9 )
 
 % loops
--6 : 5. : 6
-from 6 to 6 with step .5
-for i = 1:9
-loop from i = 1 to i = 9
+-6 : 5. : 6 % from 6 to 6 with step .5
+for i = 1:9 % loop from i = 1 to i = 9
  
 % Solving linear equations:
 A \ b   %  for A a matrix and b a column vector, the solution x to Ax=b
